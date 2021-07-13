@@ -1,0 +1,35 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Contact")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <form class="contact-form" action="http://formspree.io/jhony.avella@edunext.co" method="POST">
+            <h1>Contact us</h1>
+            <hr>
+            <fieldset class="contact-form-field">
+                <label class="contact-form-input-label" for="first-name">${_("First Name")}</label>
+                <input type="text" name="first-name" required="">
+            </fieldset>
+            <fieldset class="contact-form-field">
+                <label class="contact-form-input-label" for="last-name">${_("Last Name")}</label>
+                <input type="text" name="last-name" required="">
+            </fieldset>
+            <fieldset class="contact-form-field">
+                <label class="contact-form-input-label" for="email">${_("Email address")}</label>
+                <input type="email" name="_replyto" required="">
+            </fieldset>
+            <fieldset class="contact-form-field">
+                <label class="contact-form-input-label" for="telephone">${_("Phone Number")}</label>
+                <input type="text" name="telephone">
+            </fieldset>
+            <fieldset class="contact-form-field">
+                <label class="contact-form-input-label" for="message">${_("How can we help?")}</label>
+                <textarea type="text" name="message" rows="5" required=""></textarea>
+            </fieldset>
+            <input class="contact-form-submit" type="submit" value="${_("Send Email")}">
+        </form>
+    </section>
+</main>
